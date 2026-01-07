@@ -1,0 +1,36 @@
+<div class="row">
+    <span>my firstName Is {{firstName}}</span>
+    <br>
+    <span>my lastName is {{lastName}}</span>
+    <br>
+    <span>i am from {{village}}</span>
+    <br>
+    <div class="col-3">is he came from village - <span [class]="divClassName">{{isfromVillage}}</span></div>
+</div>
+<div class="row">
+     property binding
+     <input type="text" [value]="firstName" name="" id=""/>
+     <br>
+     <input type="text" [placeholder]="lastName"/>
+</div>
+<div class="row">
+    <div class="col-3">
+       <button (click)="onClickSubmit()" [class]="btnClass">submit</button>
+    </div>
+    <select (change)="onChangeOption()">
+        <option value="Pune">Pune</option>
+        <option value="jammu">Jammu</option>
+        <option value="hyd">Hyderabad</option>
+        <option value="vizag">visakhapatnam</option>
+    </select>
+</div>
+<div class="row">
+    <input type="text" [(ngModel)]="firstName"/>
+     <select [(ngModel)]="selectedCity">
+        <option value="Pune">Pune</option>
+        <option value="jammu">Jammu</option>
+        <option value="hyd">Hyderabad</option>
+        <option value="vizag">visakhapatnam</option>
+    </select>
+    --{{selectedCity}}
+</div>
