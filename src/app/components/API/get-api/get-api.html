@@ -1,0 +1,38 @@
+<button class="btn btn-success" (click)="getUsers()">fetch Users</button>
+<button class="btn btn-primary" (click)="getProducts()">Fetch Products</button>
+<div class="row">
+    <div class="col-7">
+    <table class="table table-bordered">
+        <thead>
+            
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>phone</th>
+                <th>userName</th>
+                <th>website</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of userList(); track $index){
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.username}}</td>
+                    <td>{{item.website}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+    <div class="col-5">
+    <select>
+        @for(product of productList(); track $index){
+        <option [value]="product.id">{{product.title}}</option>
+        }
+    </select>
+    </div>
+</div>

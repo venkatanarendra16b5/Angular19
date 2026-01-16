@@ -1,0 +1,57 @@
+<div class="row">
+    @if(isVisible){
+        <div class="col-3">
+            div 1
+        </div>
+    }
+    @else{
+        <div class="col-3">
+            div 2
+        </div>
+    }
+</div>
+<div class="row">
+     @if(weekDay == 'mon'){
+        <div class="col-3">
+           mon
+        </div>
+     }
+     @else if(weekDay == 'tue'){
+        <div class="col-3">
+           tue
+        </div>
+     }
+     @else{
+        <div class="col-3">
+            Not mon/tue
+        </div>
+     }
+</div>
+<div class="row">
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isVisible"/>
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="weekDay" maxlength="3"/>
+    </div>
+</div>
+<div class="row">
+   <div class="col-3">
+       <table  class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Emp Id</th>
+                    <th>Emp Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(emp of employArray; track $index){
+                    <tr>
+                        <td>{{emp.empId}}</td>
+                        <td>{{emp.name}}</td>
+                    </tr>
+                }
+            </tbody>
+       </table>
+   </div>
+</div>

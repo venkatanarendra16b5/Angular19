@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-7">
+    <button class="btn btn-warning" (click)="getCars()">fetch Cars</button>
+    </div>
+    <div class="col-7">
+     <table class="table table-bordered">
+        <thead class="warning">
+            <tr>
+                <th>s.no</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>DailyRate</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of carsList(); track $index){
+                <tr>
+                    <td>{{item.carId}}</td>
+                    <td>{{item.brand}}</td>
+                    <td>{{item.model}}</td>
+                    <td>{{item.dailyRate}}</td>
+                    <td>
+                        <button class="btn btn-success">Edit</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+     </table>
+    </div>
+</div>

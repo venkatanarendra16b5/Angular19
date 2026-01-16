@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-6">
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Occupation</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(item of customersList; track $index){
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.Occupation}}</td>
+                        <td>{{item.age}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
