@@ -1,16 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, inject, OnInit, signal } from '@angular/core';
-
-interface Car {
-  CarId: number;
-  Brand: string;
-  Model: string;
-  Year: string;
-  Color: string;
-  DailyRate: string;
-  CarImage: string;
-  RegNo: string;
-}
+import { Car, ICarList } from '../../../model/car';
 
 @Component({
   selector: 'app-post-api',
@@ -20,17 +10,8 @@ interface Car {
 })
 export class PostApi implements OnInit,AfterViewInit{
 
-  carsList= signal<any []>([])
-  carObj: Car = {
-    CarId: 0,
-    Brand: "",
-    Model: "",
-    Year: "",
-    Color: "",
-    DailyRate: "",
-    CarImage: "",
-    RegNo: ""
-  };
+  carsList= signal<ICarList []>([])
+  carObj: Car = new Car()
   http = inject(HttpClient)
   ngOnInit(): void {
     this.getCars()
