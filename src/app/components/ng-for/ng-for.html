@@ -1,4 +1,32 @@
 <div class="row">
+    <div class="col-3">
+        userObj => {{userObj}}
+        <br/>
+        userObj pipe => {{userObj | json}}
+    </div>
+    <div class="col-3">
+        usersArray => {{employArray}}
+        <br/>
+        employArray pipe => {{employArray | json}}
+    </div>
+    <div class="col-3">
+        date => {{dateVal}}
+        <br/>
+        dateVal pipe => {{dateVal | date}}
+        <br/>
+        dateVal pipeParams => {{dateVal | date:'dd-MM-yy'}}
+        <br/>
+        dateVal pipeParams => {{dateVal | date:'dd-MMM-yyyy'}}
+    </div>
+    <div class="col-3">
+        userName => {{userName}}
+        <br/>
+        userName UpperCase => {{userName | uppercase}}
+        <br/>
+        userName LowerCase => {{userName | lowercase}}
+    </div>
+</div>
+<div class="row">
     <div class="col-2">
         <ul>
             <li *ngFor="let city of cityList">
@@ -26,7 +54,7 @@
             <tr *ngFor="let emp of employArray; let sNo = index">
                 <td>{{sNo+1}}</td>
                 <td>{{emp.empId }}</td>
-                <td>{{emp.name}}</td>
+                <td>{{emp.name | na}}</td>
             </tr>
          </tbody>
       </table>

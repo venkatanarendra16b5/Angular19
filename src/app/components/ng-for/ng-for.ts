@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { DatePipe, JsonPipe, LowerCasePipe, NgFor, UpperCasePipe } from '@angular/common';
+import { NaPipe } from '../../pipes/na-pipe';
 
 @Component({
   selector: 'app-ng-for',
-  imports: [NgFor],
+  imports: [NgFor,JsonPipe,DatePipe,UpperCasePipe,LowerCasePipe,NaPipe],
   templateUrl: './ng-for.html',
   styleUrl: './ng-for.css',
 })
 export class NgForComponent {
   cityList: Array<string> = ['pune','hyderabad','chennai','bangalore','vizag']
+  userName:string ='Bhanu Prasad'
+  userObj = {
+    name:'narendra',
+    occupation:'software engineeer'
+  }
+  dateVal:Date = new Date()
   employArray:any[] =[
     {
       empId:1,
@@ -16,15 +23,14 @@ export class NgForComponent {
     },
     {
       empId:2,
-      name:'Nagendra'
     },
     {
       empId:3,
-      name:'rajendra'
+      name:null
     },
     {
       empId:4,
-      name:'raghavendra'
+      name:''
     },
   ]
 }

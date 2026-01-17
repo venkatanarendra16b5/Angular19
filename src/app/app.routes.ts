@@ -14,6 +14,7 @@ import { GetApi } from './components/API/get-api/get-api';
 import { PostApi } from './components/API/post-api/post-api';
 import { ResourceApi } from './components/resource-api/resource-api';
 import { CustomerDat } from './components/API/customer-dat/customer-dat';
+import { LifeCycle } from './components/life-cycle/life-cycle';
 export const routes: Routes = [
     {
         path:'',
@@ -79,5 +80,9 @@ export const routes: Routes = [
     {
         path:'customer-data',
         component:CustomerDat
+    },
+    {
+        path:'life-cycle',
+        component:LifeCycle
     }
 ];

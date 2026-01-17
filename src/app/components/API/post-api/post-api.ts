@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, signal } from '@angular/core';
+import { AfterViewInit, Component, inject, OnInit, signal } from '@angular/core';
 
 interface Car {
   CarId: number;
@@ -18,7 +18,7 @@ interface Car {
   templateUrl: './post-api.html',
   styleUrl: './post-api.css',
 })
-export class PostApi {
+export class PostApi implements OnInit,AfterViewInit{
 
   carsList= signal<any []>([])
   carObj: Car = {
@@ -32,6 +32,12 @@ export class PostApi {
     RegNo: ""
   };
   http = inject(HttpClient)
+  ngOnInit(): void {
+    this.getCars()
+  }
+  ngAfterViewInit(): void {
+    console.log('loading time of comp',performance.now())
+  }
   getCars(){
     this.http.get("https://freeapi.miniprojectideas.com/api/CarRentalApp/GetCars").subscribe((res:any)=>{
        this.carsList.set(res)

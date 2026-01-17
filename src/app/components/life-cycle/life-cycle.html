@@ -1,0 +1,7 @@
+<p>life-cycle works!</p>
+<app-input-comp [progressValue]="10"></app-input-comp>
+<div class="row p-2">
+    <div class="col-3">
+        <app-component-tabs [tabsList]="tabsList" (onTabClicked)="emitValue($event)"></app-component-tabs>
+    </div>
+</div>
