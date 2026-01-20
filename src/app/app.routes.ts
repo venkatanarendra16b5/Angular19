@@ -15,74 +15,89 @@ import { PostApi } from './components/API/post-api/post-api';
 import { ResourceApi } from './components/resource-api/resource-api';
 import { CustomerDat } from './components/API/customer-dat/customer-dat';
 import { LifeCycle } from './components/life-cycle/life-cycle';
+import { Login } from './components/login/login';
+import { Layout } from './components/layout/layout';
+import { authGuard } from './guard/auth-guard';
 export const routes: Routes = [
     {
         path:'',
-        redirectTo:'admin',
+        redirectTo:'login',
         pathMatch:'full'
     },
     {
-        path:'admin',
-        component: Admin
+        path:'login',
+        component:Login
     },
     {
-        path:'controlStatement',
-        component: ControlStatement
+        path:'',
+        component:Layout,
+        canActivate:[authGuard],
+        children:[
+            {
+                path:'admin',
+                component: Admin
+            },
+            {
+                path:'controlStatement',
+                component: ControlStatement
+            },
+            {
+                path:'dataBinding',
+                component: DataBinding
+            },
+            {
+                path:'ngClass',
+                component:NgClassComponent
+            },
+            {
+                path:'ngFor',
+                component: NgForComponent
+            },
+            {
+                path:'ngIf',
+                component: NgIf
+            },
+            {
+                path:'ngStyle',
+                component:NgStyleComponent
+            },
+            {
+                path:'signalComponent',
+                component:SignalComponent
+            },
+            {
+                path:'user',
+                component:User
+            },
+            {
+                path:'templateForm',
+                component:TemplateForm
+            },
+            {
+                path:'reactiveForm',
+                component:ReactiveForm
+            },
+            {
+                path:'get-api',
+                component:GetApi
+            },
+            {
+                path:'post-api',
+                component:PostApi
+            },
+            {
+                path:'resource-api',
+                component:ResourceApi
+            },
+            {
+                path:'customer-data',
+                component:CustomerDat
+            },
+            {
+                path:'life-cycle',
+                component:LifeCycle
+            }
+        ]
     },
-    {
-        path:'dataBinding',
-        component: DataBinding
-    },
-    {
-        path:'ngClass',
-        component:NgClassComponent
-    },
-    {
-        path:'ngFor',
-        component: NgForComponent
-    },
-    {
-        path:'ngIf',
-        component: NgIf
-    },
-    {
-        path:'ngStyle',
-        component:NgStyleComponent
-    },
-    {
-        path:'signalComponent',
-        component:SignalComponent
-    },
-    {
-        path:'user',
-        component:User
-    },
-    {
-        path:'templateForm',
-        component:TemplateForm
-    },
-    {
-        path:'reactiveForm',
-        component:ReactiveForm
-    },
-    {
-        path:'get-api',
-        component:GetApi
-    },
-    {
-        path:'post-api',
-        component:PostApi
-    },
-    {
-        path:'resource-api',
-        component:ResourceApi
-    },
-    {
-        path:'customer-data',
-        component:CustomerDat
-    },
-    {
-        path:'life-cycle',
-        component:LifeCycle
-    }
+    
 ];

@@ -1,32 +1,30 @@
-import { Interface } from "readline";
-
 export class Car{
-    CarId: number;
-    Brand: string;
-    Model: string;
-    Year: string;
-    Color: string;
-    DailyRate: string;
-    CarImage: string;
-    RegNo: string;
+    carId: number;
+    brand: string;
+    model: string;
+    year: string;
+    color: string;
+    dailyRate: string;
+    carImage: string;
+    regNo: string;
     constructor(){
-        this.CarId = 0;
-        this.Brand='';
-        this.Model = '';
-        this.Year = '';
-        this.Color = '';
-        this.DailyRate = '';
-        this.CarImage = '';
-        this.RegNo = ''
+        this.carId = 0;
+        this.brand='';
+        this.model = '';
+        this.year = '';
+        this.color = '';
+        this.dailyRate = '';
+        this.carImage = '';
+        this.regNo = ''
     }
 }
 export interface ICarList{
-   CarId: number;
-    Brand: string;
-    Model: string;
-    Year: string;
-    Color: string;
-    DailyRate ?: string; // it is an optional field in this obj
-    CarImage: string;
-    RegNo: string;
+    carId: number;
+    brand: string;
+    model: string;
+    year: string;
+    color: string;
+    dailyRate ?: string; // it is an optional field in this obj
+    carImage: string;
+    regNo: string;
 }
