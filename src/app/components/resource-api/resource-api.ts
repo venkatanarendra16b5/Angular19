@@ -8,7 +8,7 @@ import { Component, resource } from '@angular/core';
 })
 export class ResourceApi {
    userList = resource({
-    loader:()=>{
+    loader:async()=>{
       return fetch('https://jsonplaceholder.typicode.com/users').then((res)=>res.json() as Promise<any []>)
     }
    })

@@ -18,6 +18,7 @@ import { LifeCycle } from './components/life-cycle/life-cycle';
 import { Login } from './components/login/login';
 import { Layout } from './components/layout/layout';
 import { authGuard } from './guard/auth-guard';
+import { NgTempNgContainer } from './components/ng-temp-ng-container/ng-temp-ng-container';
 export const routes: Routes = [
     {
         path:'',
@@ -96,6 +97,10 @@ export const routes: Routes = [
             {
                 path:'life-cycle',
                 component:LifeCycle
+            },
+            {
+                path:'temp-container',
+                component:NgTempNgContainer
             }
         ]
     },

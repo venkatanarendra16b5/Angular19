@@ -1,0 +1,47 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>EmpId</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Contact</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngIf="isLoading">
+
+            <!-- <div [ngTemplateOutlet]="loading">
+
+           </div> -->
+            <tr>
+                <td colspan="5" class="text-align-center">
+                    <div>
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </ng-container>
+        <ng-container *ngIf="!isLoading">
+            <tr *ngFor="let emp of employArray;let srNo = index">
+                <td>{{emp.empId}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.city}}</td>
+                <td>{{emp.contact}}</td>
+                <td>
+                    <h4 *ngIf="emp.isActive; else inactive">Active</h4>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+<ng-template #loading>
+
+</ng-template>
+<ng-template #inactive>
+    <div class="text-danger">
+        <span>De-Active</span>
+    </div>
+</ng-template>
